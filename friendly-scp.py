@@ -41,7 +41,7 @@ def scp_copy(ipaddress, user='root', passwd='geocom', port=22, timeout=15):
 def start_workers(threads=15):
     global q
     q = queue.Queue()
-    for i in range(threads):
+    for _ in range(threads):
         worker = threading.Thread(target=my_queue, args=(q,))
         worker.setDaemon(True)
         worker.start()
