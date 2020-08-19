@@ -15,7 +15,7 @@ def my_queue(q):
         scp_copy(ip)
         q.task_done()
 
-def scp_copy(ipaddress, user='root', passwd='geocom', port=22, timeout=15):
+def scp_copy(ipaddress, user, passwd, port=22, timeout=15):
     try:
         logging.debug('Opening connection to ' + ipaddress)
         sock = socket.socket(socket.AF_INET, 2049)
